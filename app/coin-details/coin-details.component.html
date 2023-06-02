@@ -1,0 +1,41 @@
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-12">
+      <button class="btn btn-primary back-button" (click)="goBack()">&#8592; Back</button>
+    </div>
+  </div>
+
+  <div *ngIf="coin" class="row">
+    <div class="col-lg-6 col-md-12">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ coin.country }}</mat-card-title>
+          <mat-card-subtitle>Coin Details</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="coin-image" [src]="coin.img_url" alt="{{ coin.country }} Coin">
+        <mat-card-content>
+          <p><strong>Year:</strong> {{ coin.year }}</p>
+          <p><strong>Quarter:</strong> {{ coin.quarter }}</p>
+          <p><strong>Motiv:</strong> {{ coin.motiv }}</p>
+          <p><strong>Naklad:</strong> {{ coin.naklad }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="col-lg-6 col-md-12">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Popis</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ coin.popis }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+

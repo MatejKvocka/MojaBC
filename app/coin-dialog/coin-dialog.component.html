@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>{{ coin.country }}</h2>
+<div mat-dialog-content>
+  <img [src]="coin.img_url" alt="Coin Image" class="coin-image">
+  <p><strong>Motiv:</strong> {{ coin.motiv }}</p>
+  <p><strong>Popis:</strong> {{ coin.popis }}</p>
+  <p><strong>Naklad:</strong> {{ coin.naklad }}</p>
+  <p><strong>Year:</strong> {{ coin.year }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

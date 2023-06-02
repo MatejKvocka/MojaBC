@@ -1,0 +1,25 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="showNav">
+  <mat-sidenav #drawer class="sidenav" mode="over" style="width:250px" hasBackdrop="false">
+    <button mat-icon-button (click)="drawer.toggle()" class="close-button">
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/coins" (click)="drawer.close()">Domov</a>
+      <a mat-list-item *ngIf="userId" routerLink="/profile/{{userId}}" (click)="drawer.close()">Profil</a>
+      <a mat-list-item routerLink="/statistics/{{userId}}" (click)="drawer.close()">Statistics</a>
+      <a mat-list-item (click)="logout(); drawer.close()">Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="logo">
+        <img src="\assets\images\logo-no-background.png" alt="Logo">
+      </div>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<router-outlet></router-outlet>

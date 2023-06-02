@@ -1,0 +1,31 @@
+<body class="navbar-hidden">
+  <div class="layout-container">
+    <div class="logo-container" style="background: url('/assets/images/logo-color.png') no-repeat center center; background-size: cover;"></div>
+    
+    <div class="login-container">
+      <mat-card class="login-card">
+        <mat-card-header>
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form>
+            <mat-form-field class="full-width">
+              <mat-label>Email</mat-label>
+              <input matInput [(ngModel)]="email" name="email" required />
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" [(ngModel)]="password" name="password" required />
+            </mat-form-field>
+
+            <div class="button-container">
+              <button mat-raised-button color="primary" class="btn btn-primary" (click)="login()">Login</button>
+              <button mat-button routerLink="/register" class="btn btn-primary">Create an account</button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</body>

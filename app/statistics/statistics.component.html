@@ -1,0 +1,24 @@
+<div>
+    <h1>Štatistika</h1>
+<div class="progress-card">
+    <div class="card-header">
+        <h2>Progress</h2>
+    </div>
+
+    <mat-progress-bar class="progress-bar" mode="determinate" [value]="totalPercentage"></mat-progress-bar>
+</div>
+
+
+<div class="row">
+    <div class="col" *ngFor="let country of coinsPerCountry">
+        <div class="progress-card">
+            <div class="card-header">
+                <h2>{{ country.name }}</h2>
+                <span class="percentage">{{ country.collectedPercentage | number:'1.0-0' }}%</span>
+            </div>
+            <mat-progress-bar class="progress-bar" mode="determinate"
+                [value]="country.collectedPercentage"></mat-progress-bar>
+        </div>
+    </div>
+</div>
+</div>
